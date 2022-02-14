@@ -1,0 +1,59 @@
+flag = 1 
+while flag == 1:
+print('\n\n')
+print('-----EXCEPTION HANDLING------')
+print('1.ARITHMATIC EXCEPTION\n2.ASSERTION EXCEPTION\n3.INDEX EXCEPTION') print('4.FILE HANDLING EXCEPTION\n5.RAISING AN EXCEPTION\n6.EXIT')
+ch = int(input('Enter your choice: '))
+if ch == 1:
+    a = int(input('Enter Numerator: '))
+    b = int(input('Enter Denominator: '))
+    try:
+      c = a / b
+    except ArithmeticError as e:
+      print(e) 
+    else: 
+      print('Success') 
+elif ch == 2: 
+    a = int(input('Enter value of a: ')) 
+    b = int(input('Enter value of b: ')) 
+    try: 
+      assert a == b, "value mismatch"
+    except AssertionError as e:
+      print(e) 
+    else: 
+      print('Success') 
+elif ch == 3:
+    list1 = [1, 2, 3]
+    print(list1) a = int(input('Enter The Element Index To be Accessed: ')) 
+    try: print(list1[a]) 
+except IndexError as e: 
+    print(e)
+else: 
+    print('Success') 
+elif ch == 4: 
+    a = input('Enter File Name to be Accessed: ') 
+    b = input('Enter the File accessing mode: ') 
+    try: 
+      f = open(a,b)
+      f.write('Loreum Ipsum') 
+except IOError: 
+    print('File Error')
+else:
+     print('Written Content in File') 
+finally: 
+     f.close() 
+elif ch == 5: 
+    def ageeligible(age): 
+       try: 
+          if(age<=18): 
+            raise Exception 
+     except Exception: 
+         return 'not eligible'
+ else: 
+         return 'eligible' 
+      age = int(input('Enter Age: ')) 
+      print(ageeligible(age)) 
+elif ch == 6:
+   exit() 
+flag = int(input('Do You Want To Continue(1/0)'))
+

@@ -1,0 +1,30 @@
+from tkinter import*
+top=Tk()
+top.geometry("1200x600")
+c=Canvas(top,bg="pink",height="600",width="600")
+def drawarc():
+    arc=c.create_arc((200,250,260,230),start=0,extent=150,fill="White")
+    c.pack()
+    c.delete()
+def drawoval():
+    oval=c.create_oval(50,50,500,500)
+    c.pack()
+def drawline():
+    line=c.create_line(200,150,200,200)
+    c.pack()
+def drawrec():
+    rec=c.create_rectangle(100,300,300,350,fill="orange")
+    c.pack()
+def clearcan():
+    c.delete("all")
+b1=Button(top,text="draw arc",command=drawarc,activeforeground="red",activebackground="red",pady=10)
+b2=Button(top,text="draw oval",command=drawoval,pady=10)
+b3=Button(top,text="draw line",command=drawline,pady=10)
+b4=Button(top,text="draw rectangle",command=drawrec,pady=10)
+b5=Button(top,text="Clear canvas",command=clearcan,pady=10)
+b1.pack(side=TOP)
+b2.pack(side=BOTTOM)
+b3.pack(side=LEFT)
+b4.pack(side=RIGHT)
+b5.pack(side=TOP)
+top.mainloop()

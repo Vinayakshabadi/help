@@ -1,0 +1,102 @@
+4)
+flag=1
+while(flag==1):
+    print("+++++MENU++++++")
+    print("1:String manipulation\n2:Dictionary manipulation\n3:List manipulation\n4:Exit")
+    ch=int(input("enter a choice:"))
+    if ch==1:
+        s1=input("Enter a string:")
+        sflag=1
+        while(sflag==1):
+         print("1:Concatination\n2:Length\n3:Uppercase\n4:Whitwspace\n5:Replace\n6:Exit main menu")
+         sch=int(input("Enter a choice:"))
+         if sch==1:
+             s2=input('Enter a second string')
+             print("Concatination of",s1,"and",s2,"is",(s1+s2))
+         elif sch==3:
+             print("Uppercase of",s1,";",s1.upper())
+         elif sch==2:
+             print("length of string",s1.__len__())
+         elif sch==4:
+             print("there is space",s1.isspace())
+         elif sch==5:
+             s2=input("Enter a String to be replace:")
+             print("repalcing",s1.replace(s1,s2))
+             print("string s1",s1)
+             print("string 2",s2)
+         elif sch==6:
+             break
+         else:
+            print("invalid input")
+            exit()
+        sflag=int(input("Do you want To continue?(1/0)"))
+    elif ch==2:
+        stud={"name":"akash","roll num":509,"total marks":443,"age":22}
+        dflag=1
+        while(dflag==1):
+            print("1:Print\n2:Update\n3:Append\n4:Convert to String\n5:Delete\n6:Exit")
+            dch=int(input("Enter a choice:"))
+            if dch==1:
+                print(stud)
+            elif dch==2:
+                print("Enter a new details:")
+                stud["name"]=input("name:")
+                stud["roll num"]=input("roll num:")
+                stud["total marks"]=input("total marks")
+                stud["age"]=input("age:")
+                print("New student Details:")
+                print("")
+                print(stud)
+            elif dch==3:
+                print("Enter a new key value:")
+                stud["phno"]=input("phno:")
+                print("Appended Student Details:")
+                print("")
+                print(stud)
+            elif dch==4:
+                print("Convert to string:",str(stud))
+            elif dch==5:
+                print("Deleted stud:")
+                del stud
+            else:
+                print("Invalid input")
+                exit()
+            dflag=int(input("Do you want to continue?(1/0)"))
+    elif ch==3:
+        lflag=1
+        while(lflag==1):
+            alist=[1,2,3,4,2,1]
+            print(alist)
+            print("1:Length\n2:Sort\n3:Reverse\n4:Append\n5:Remove\n6:Exit")
+            lch=int(input("Enter a new choice:"))
+            if lch==1:
+                print("Length of list",len(alist))
+
+            elif lch==2 :
+                print(alist)
+                alist.sort()
+                print("After sorting",alist)
+            elif lch==3:
+                alist.reverse()
+                print("reversed list",alist)
+            elif lch==4:
+                x=int(input("Enter a element to be appended"))
+                alist.append(x)
+                print("Appended list",alist)
+            elif lch==5:
+                y=int(input("Enter element to be removed:"))
+                if y in alist:
+                    alist.remove(y)
+                    print("removed",y)
+                    print(alist)
+            elif lch==6:
+                break
+            else:
+                print("Invalid input")
+                exit()
+            dflag=int(input(("Do you want to continue?(1/0)")))
+    elif ch==4:
+        exit()
+    flag=int(input("Do you want to continue?(1/0)"))
+
+

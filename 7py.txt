@@ -1,0 +1,9 @@
+import re
+PanNumRegex=re.compile(r'[a-zA-Z]{5}[0-9]{4}[a-z]{1}')
+try:
+    pan=input("enter a pan card Number:")
+    checkpan=PanNumRegex.search(pan)
+    print("pan no matches:"+checkpan.group())
+except:
+    print("Does not matches")
+    

@@ -1,0 +1,9 @@
+def iterable(obj):
+    try:
+        iter(obj)
+        return True
+    except TypeError:
+        return False
+list=[22,[2,3],[4,5],[3,2],"MEGHANA",2.3]
+for element in list:
+    print(element,"is Iterable",iterable(element))

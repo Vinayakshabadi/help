@@ -1,0 +1,109 @@
+ACTIVITY MAIN.XML
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_centerInParent="true"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/playBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:onClick="playMusic"
+        android:text="@string/play"
+        android:layout_marginBottom="20dp"
+        android:background="@color/play"/>
+
+    <Button
+        android:id="@+id/pauseBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:onClick="pauseMusic"
+        android:text="@string/pause"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@+id/playBtn"
+        android:background="@color/pause"/>
+
+    <Button
+        android:id="@+id/stopBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:onClick="stopMusic"
+        android:layout_marginBottom="20dp"
+        android:background="@color/stop"
+        android:layout_below="@+id/pauseBtn"
+        android:text="@string/stop"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/playBtn"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        app:srcCompat="@drawable/mandroid1"
+         />
+
+</RelativeLayout>
+
+MAIN.XMLJAVA
+package com.example.program06;
+
+import...
+
+public class MainActivity extends AppCompatActivity {
+    Button play,pause,stop;
+    MediaPlayer mediaPlayer;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        play=findViewById(R.id.playBtn);
+        pause=findViewById(R.id.pauseBtn);
+        stop=findViewById(R.id.stopBtn);
+        mediaPlayer=MediaPlayer.create(MainActivity.this,R.raw.music);
+    }
+    public void playMusic(View view){
+        mediaPlayer.start();
+    }
+    public void pauseMusic(View view){
+        mediaPlayer.pause();
+    }
+    public void stopMusic(View view){
+        mediaPlayer.stop();
+        mediaPlayer=MediaPlayer.create(MainActivity.this,R.raw.music);
+    }
+}
+
+STRING.XML
+
+<resources>
+    <string name="app_name">Program06</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="stop">Stop</string>
+</resources>
+
+
+COLOR.XML
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#ff5252</color>
+
+    <color name="play">#2196f3</color>
+    <color name="pause">#ffeb3b</color>
+    <color name="stop">ff5252</color>
+</resources>

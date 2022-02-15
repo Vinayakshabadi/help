@@ -1,0 +1,56 @@
+ACTIVITY MAIN.XML
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:id="@+id/main"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/android"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn"
+        android:text="Click"/>
+</LinearLayout>
+
+
+
+
+
+
+MAIN ACTIVITY.JAVA
+
+package com.example.myapplication;
+
+import...
+public class MainActivity extends AppCompatActivity {
+    Button b;
+    LinearLayout l;
+    int color[]={Color.RED,Color.BLUE,Color.GREEN};
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        b=findViewById(R.id.btn);
+        l=findViewById(R.id.main);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Random random=new Random();
+                int n=color.length;
+                int a=random.nextInt(n);
+                l.setBackgroundColor(color[a]);
+
+            }
+        });
+    }
+}

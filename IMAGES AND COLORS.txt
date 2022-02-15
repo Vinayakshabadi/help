@@ -1,0 +1,64 @@
+ACTIVITY.MAIN.XML
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rView"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        app:srcCompat="@drawable/android"
+        />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click Me"
+        android:layout_below="@+id/imageView"
+        android:layout_centerInParent="true"
+         />
+
+</RelativeLayout>
+
+
+MAIN.ACTIVITY.JAVA
+
+package com.example.program04;
+
+import...
+
+
+public class MainActivity extends AppCompatActivity {
+    RelativeLayout screenView;
+    Button click;
+    int[] color={Color.BLUE,Color.RED,Color.GRAY,Color.GREEN,Color.MAGENTA,Color.YELLOW};
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        screenView=findViewById(R.id.rView);
+        click=findViewById(R.id.button);
+
+        click.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int aryLength=color.length;
+                Random random=new Random();
+                int rNum= random.nextInt(aryLength);
+                screenView.setBackgroundColor(color[rNum]);
+            }
+        });
+    }
+}

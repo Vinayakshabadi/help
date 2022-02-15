@@ -1,0 +1,39 @@
+menu=1
+while(menu==1):
+    print("****MENU****")
+    print("\n1.Square of numbers between 1 to 10")
+    print("\n2.Numbers divisible by 2 and 5")
+    print("\n3.transpose matrix")
+    print("\n4.Convert Fahrenheit to Celsius")
+    print("\n5.Lambda Functions")
+    print("\n6.Exit")
+    ch=int(input("Enter your choice:"))
+    if(ch==1):
+        list=[var ** 2 for var in range(10)]
+        print(list)
+    elif(ch==2):
+        num_list=[i for i in range(100) if i%2==0 if i%5==0]
+        print(num_list)
+    elif(ch==3):
+        matrix=[[1,2],[3,4],[5,6],[7,8]]
+        print("original matrix")
+        print(matrix)
+        transpose=[[row[i]for row in matrix]for i in range(2)]
+        print("tranpose matrix")
+        print(transpose)
+    elif(ch==4):
+        f_temp=[98.5,101,203]
+        c_temp=[((f-32)*5/4)for f in f_temp]
+        print("Fahernheit",f_temp)
+        print("Celsius",c_temp)
+    elif(ch==5):
+        num=lambda a:a+10
+        print("sum",num(20))
+        x=lambda a,b:a+b
+        print("sum",x(10,20))
+        y=lambda a,b,c:a+b+c
+        print("sum",y(10,20,30))
+    else:
+        print("invalid input")
+        exit()
+    menu=int(input("Do you want to continue then press 1 ptherwise press 0:"))

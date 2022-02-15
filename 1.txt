@@ -1,0 +1,34 @@
+s1=input("Enter the first String")
+flag=1
+while(flag==1):
+    print("*****MENU*****")
+    print("1:Concatenation\n2:Upper Case\n3:Lower Case\n4:Capitalize\n5:Replace\n6:White Space\n7:Length\n8:Alphabets\n9:Numbers\n10:Alphabets & Numbers")
+    ch=int(input("Enter Your choice"))
+    if ch==1:
+        s2=input("Enter the second string")
+        print(s1+s2)
+    elif ch==2:
+        print(s1.upper())
+    elif ch==3:
+        print(s1.lower())
+    elif ch==4:
+        print(s1.capitalize())
+    elif ch==5:
+        s2=input("Enter the string to be replaced")
+        print(s1.replace(s1,s2))
+        print(s1)
+        print(s2)
+    elif ch==6:
+        print(s1.isspace())
+    elif ch==7:
+        print(s1.__len__())
+    elif ch==8:
+        print(s1.isalpha())
+    elif ch==9:
+        print(s1.isnumeric())
+    elif ch==10:
+        print(s1.isalnum())
+    else:
+        print("Invalid Input")
+        exit()
+    flag=int(input("Do you want to continue:?(1/0)"))

@@ -1,0 +1,30 @@
+stud= {"name":"Sumant","age":19,"roll no":"M1910552","total_marks":584}
+flag=1
+while(flag==1):
+    print("****MENu****")
+    print("1.PRINT\n2.UPDATE\n3.APPEND\n4.CONVERT TO STRING\n5.DELETE")
+    ch=int(input("Enter the choice:"))
+    if ch==1:
+        print(stud)
+    elif ch==2:
+        print("Enter new student details:")
+        stud["name"]=input("name:")
+        stud["age"]=input("age:")
+        stud["roll no"]=input("roll no:")
+        stud["total_marks"]=input("total_marks:")
+        print("New student details")
+        print(" ")
+        print(stud)
+    elif ch==3:
+        print("Enter New-key value:")
+        stud["phno"]=input("phno:")
+        print(stud)
+    elif ch==4:
+        print(str(stud))
+    elif ch==5:
+        print("Deleted Stud")
+        del stud
+    else:
+        print("Invalid input")
+        exit()
+    flag=int(input("Do you want to continue?(1/0):"))
